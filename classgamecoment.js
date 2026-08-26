@@ -125,7 +125,7 @@ function perguntarSeDesejaContinuar() {
             console.clear();        // console.clear(): Apaga todo o histórico visual do terminal.
             iniciarFormulario();    // Reinicia o fluxo de perguntas lá do absoluto zero.
         } else {
-            console.log('\nPrograma encerrado. Boa sorte na sua jornada, desenvolvedor! 🎮');
+            console.log('\nPrograma encerrado. Obrigado! 🎮');
             readline.close();       // readline.close(): Desliga a escuta do teclado. Sem isso o Node.js fica travado.
         }
     });
