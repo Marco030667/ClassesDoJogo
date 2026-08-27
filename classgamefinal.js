@@ -1,3 +1,5 @@
+const { clear } = require('console');
+
 // Importa o módulo para ler dados do terminal
 const readline = require('readline').createInterface({
     input: process.stdin,
@@ -36,6 +38,8 @@ const tiposValidos = ["mago", "guerreiro", "monge", "ninja"];
 
 // Função principal que gerencia o fluxo de perguntas com validações
 function iniciarFormulario() {
+
+
     readline.question('\nDigite o nome do herói: ', (nome) => {
         // Validação do Nome: Não pode ser vazio
         if (!nome.trim()) {
@@ -87,9 +91,11 @@ function perguntarSeDesejaContinuar() {
         
         if (escolha === 'sim' || escolha === 's') {
             console.clear(); // Limpa a tela do terminal para a nova execução!
+            console.log("<<<<<<<<<<<<<<<<<<<<<<< CRIADOR DE HERÓIS RPG >>>>>>>>>>>>>>>>>>>>>>>");
             iniciarFormulario(); 
         } else {
-            console.log('\n>>> Programa Encerrado. Até a próxima! <<< 🎮');
+            console.clear()
+            console.log('\n>>> Programa Encerrado. Até a próxima! <<<');
             readline.close(); 
         }
     });
