@@ -1,4 +1,4 @@
-# 📚 Estudo de Sintaxe: Criador de Heróis RPG
+# Estudo de Sintaxe: Criador de Heróis RPG
 
 Este documento contém o código interativo completo do desafio estruturado com comentários minuciosos em cada linha, feito sob medida para facilitar a leitura, revisão e fixação de todos os conceitos de sintaxe.
 
@@ -69,7 +69,7 @@ function iniciarFormulario() {
         
         // !nome.trim(): O "!" inverte o valor. Se o nome limpo for vazio (falso), o "!" transforma em verdadeiro.
         if (!nome.trim()) {
-            console.log("❌ Erro: O nome do herói não pode ficar em branco.");
+            console.log("Erro: O nome do herói não pode ficar em branco.");
             return iniciarFormulario(); // return + função(): Para a execução atual e reinicia a pergunta do nome.
         }
         
@@ -85,7 +85,7 @@ function perguntarIdade(nome) {
         
         // isNaN(): Verifica se "Não é um Número". O "||" (OU) adiciona a regra de validar se a idade é menor ou igual a zero.
         if (isNaN(idadeNum) || idadeNum <= 0) {
-            console.log("❌ Erro: Por favor, digite uma idade válida (número maior que 0).");
+            console.log("Erro: Por favor, digite uma idade válida (número maior que 0).");
             return perguntarIdade(nome); // Reinicia a pergunta da idade sem perder o nome digitado anteriormente.
         }
 
@@ -102,14 +102,14 @@ function perguntarTipo(nome, idade) {
         // !tiposValidos.includes(): O .includes() busca o texto na lista. O "!" altera a lógica para "Se NÃO estiver na lista".
         if (!tiposValidos.includes(tipoFormatado)) {
             // .join(", "): Pega os itens do Array e transforma em um texto amigável separado por vírgulas.
-            console.log(`❌ Erro: Tipo inválido! Escolha entre: ${tiposValidos.join(", ")}.`);
+            console.log(`Erro: Tipo inválido! Escolha entre: ${tiposValidos.join(", ")}.`);
             return perguntarTipo(nome, idade); // Reinicia a pergunta do tipo mantendo os dados anteriores salvos.
         }
 
         // new heroi(...): Cria/instancia o objeto final na memória usando a classe criada no início.
         const novoHeroi = new heroi(nome, idade, tipoFormatado);
         
-        console.log("\n✨ RESULTADO:");
+        console.log("\nRESULTADO:");
         console.log(novoHeroi.obterMensagemAtaque()); // Executa o método de ataque e exibe o resultado no terminal.
 
         perguntarSeDesejaContinuar(); // Chama a rotina de loop para saber se o usuário quer continuar.
