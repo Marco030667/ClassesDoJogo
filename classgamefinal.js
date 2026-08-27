@@ -39,7 +39,7 @@ function iniciarFormulario() {
     readline.question('\nDigite o nome do herói: ', (nome) => {
         // Validação do Nome: Não pode ser vazio
         if (!nome.trim()) {
-            console.log("❌ Erro: O nome do herói não pode ficar em branco.");
+            console.log(">>> Erro: O nome do herói não pode ficar em branco. <<<");
             return iniciarFormulario(); // Reinicia o fluxo atual
         }
 
@@ -53,7 +53,7 @@ function perguntarIdade(nome) {
         
         // Validação da Idade: Deve ser um número maior que zero
         if (isNaN(idadeNum) || idadeNum <= 0) {
-            console.log("❌ Erro: Por favor, digite uma idade válida (número maior que 0).");
+            console.log(">>> Erro: Por favor, digite uma idade válida (número maior que 0). <<<");
             return perguntarIdade(nome); // Refaz apenas a pergunta da idade
         }
 
@@ -67,13 +67,13 @@ function perguntarTipo(nome, idade) {
 
         // Validação do Tipo: Deve estar na lista de tipos válidos
         if (!tiposValidos.includes(tipoFormatado)) {
-            console.log(`❌ Erro: Tipo inválido! Escolha entre: ${tiposValidos.join(", ")}.`);
+            console.log(`>>> Erro: Tipo inválido! <<< Escolha entre: ${tiposValidos.join(", ")}.`);
             return perguntarTipo(nome, idade); // Refaz apenas a pergunta do tipo
         }
 
         // Se passou em todas as validações, cria o herói e exibe o resultado
         const novoHeroi = new heroi(nome, idade, tipoFormatado);
-        console.log("\n✨ RESULTADO:");
+        console.log("\n >>> RESULTADO <<<");
         console.log(novoHeroi.obterMensagemAtaque());
 
         perguntarSeDesejaContinuar();
@@ -89,7 +89,7 @@ function perguntarSeDesejaContinuar() {
             console.clear(); // Limpa a tela do terminal para a nova execução!
             iniciarFormulario(); 
         } else {
-            console.log('\nPrograma encerrado. Boa sorte na sua jornada, desenvolvedor! 🎮');
+            console.log('\n>>> Programa Encerrado. Até a próxima! <<< 🎮');
             readline.close(); 
         }
     });
@@ -97,5 +97,5 @@ function perguntarSeDesejaContinuar() {
 
 // Inicia o programa limpando a tela logo na primeira vez
 console.clear();
-console.log("=== CRIADOR DE HERÓIS RPG ===");
+console.log("<<<<<<<<<<<<<<<<<<<<<<< CRIADOR DE HERÓIS RPG >>>>>>>>>>>>>>>>>>>>>>>");
 iniciarFormulario();
